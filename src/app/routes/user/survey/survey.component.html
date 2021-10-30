@@ -1,0 +1,112 @@
+<div class="container__survey">
+  <!-- <div class="overlay"></div> -->
+  <div class="title">Survey</div>
+  <!-- <div class="line-break"></div> -->
+  <div class="mode--survey" *ngIf="mode == 'survey'">
+    <div *ngFor="let item of filteredQuestion; let i = index">
+      <div class="survey__header">
+        <div class="question-index">
+          Question {{ pager.index + 1 }} of {{ pager.count }}.
+        </div>
+        <div class="duration-time">
+          Time: {{ ellapsedTime }}/ {{ duration }}
+        </div>
+      </div>
+      <div class="survey__body">
+        <h2 class="question__title">
+          1. <span [innerHTML]> {{ item.question | json }}</span>
+        </h2>
+        <div class="container__options">
+          <div *ngFor="let option of item.options" class="option__item">
+            <label class="option__item--label" [attr.for]="option.id"
+              ><input
+                id="option.id"
+                class="option__item--input"
+                type="checkbox"
+                [(ngModel)]="option.selected"
+                (change)="onSelected(item, option)"
+              />{{ option.name }}</label
+            >
+          </div>
+        </div>
+        <div class="container__control">
+          <button class="btn__control" (click)="goTo(0)">First</button
+          ><button class="btn__control" (click)="goTo(pager.index - 1)">
+            Pre</button
+          ><button class="btn__control" (click)="goTo(pager.index + 1)">
+            Next</button
+          ><button class="btn__control" (click)="goTo(pager.count - 1)">
+            Last
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mode--review" *ngIf="mode == 'review'">
+    <div class="listQuestion__review">
+      <div
+        class="question__review {{
+          isAnswered(question) == 'Answered' ? 'answer' : 'notanswer'
+        }}"
+        *ngFor="let question of questions; let i = index"
+        (click)="mode = 'survey'; goTo(i)"
+      >
+        <h3 class="question__name">Question {{ i + 1 }}</h3>
+        <h4 class="question__status">
+          {{ isAnswered(question) }}
+        </h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="mode--result" *ngIf="mode == 'result'">
+    <h1 class="result__title">Result</h1>
+    <div class="listQuestion__result">
+      <div
+        class="item__result {{
+          isCorrect(question) === 'correct' ? 'bg--correct' : 'bg--wrong'
+        }}"
+        *ngFor="let question of questions; let i = index"
+      >
+        <h3 class="item__result--title">{{ i + 1 }}.{{ question.question }}</h3>
+        <div
+          class="item__result--options"
+          *ngFor="let option of question.options"
+        >
+          <label class="option__item--label" [attr.for]="option.id"
+            ><input
+              id="option.id"
+              class="option__item--input"
+              type="checkbox"
+              disabled
+              [(ngModel)]="option.selected"
+            />{{ option.name }}</label
+          >
+        </div>
+        <div class="item__result--message">
+          You are {{ isCorrect(question) }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- ____________Footer___________ -->
+  <div class="survey__footer" *ngIf="mode != 'result'">
+    <button
+      [ngClass]="{ active: mode == 'survey' }"
+      class="footer__btn"
+      (click)="mode = 'survey'"
+    >
+      Survey</button
+    ><button
+      [ngClass]="{ active: mode == 'review' }"
+      class="footer__btn"
+      (click)="mode = 'review'"
+    >
+      Review</button
+    ><button class="footer__btn" (click)="onSubmit()">Submit</button>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="container__login">
+  <!-- <div class="overlay"></div> -->
+  <div class="form__login">
+    <h1 class="title__login">Đăng nhập</h1>
+    <div class="mode" *ngIf="mode === 'error'">
+      Tài khoản hoặc mật khẩu không chính xác. Vui lòng nhập lại
+    </div>
+    <div class="gotoResgister">
+      Nếu chứ có tài khoản hãy
+      <button>
+        <a [routerLink]="['/register']">Đăng kí</a>
+      </button>
+    </div>
+    <form
+      class="form"
+      novalidate
+      (ngSubmit)="onSubmit()"
+      [formGroup]="formLogin"
+    >
+      <div class="form__control">
+        <label class="form__control--label">Tài Khoản</label>
+        <input
+          formControlName="userName"
+          type="text"
+          class="form__control--input"
+          (keyup)="onChange()"
+        />
+      </div>
+      <div class="form__control">
+        <label class="form__control--label">Mật Khẩu</label>
+        <input
+          formControlName="passWord"
+          type="password"
+          class="form__control--input"
+          (keyup)="onChange()"
+        />
+      </div>
+      <div class="form__control">
+        <button class="submit">Đăng nhập</button>
+      </div>
+    </form>
+
+    <div class="go-main">
+      <h3 style="color: white">Auth Guard is Disabled, you can go</h3>
+      <button class="submit" (click)="goMain()">Go main</button>
+    </div>
+  </div>
+</div>

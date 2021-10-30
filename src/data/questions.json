@@ -1,0 +1,62 @@
+[
+  {
+    "_id": {
+      "$oid": "612c8029415565e43028b2ed"
+    },
+    "question": "How many people are there ?",
+    "answer1": "I think !",
+    "answer2": "Fighting !",
+    "answer3": "No, It isn't",
+    "answer4": "There are 4 people.",
+    "correctanswer": "There are 4 people.",
+    "createdAt": {
+      "$date": "2021-08-30T06:52:25.757Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "612c8039415565e43028b2f0"
+    },
+    "question": "What are you doing ?",
+    "answer1": "I am going to FPT",
+    "answer2": "Here !",
+    "answer3": "Yes, I am",
+    "answer4": "Say oh yeah !",
+    "correctanswer": "I am going to FPT",
+    "createdAt": {
+      "$date": "2021-08-30T06:52:41.851Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "612c808b415565e43028b2f5"
+    },
+    "question": "What time is it???",
+    "answer1": "I don't know",
+    "answer2": "Right !",
+    "answer3": "No, It isn't",
+    "answer4": "12:30",
+    "correctanswer": "12:30",
+    "createdAt": {
+      "$date": "2021-08-30T06:54:03.073Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "612c80c2415565e43028b2fa"
+    },
+    "question": "How are you ?",
+    "answer1": "I don't know",
+    "answer2": "I'm fine. Thank !",
+    "answer3": "No problem ",
+    "answer4": "Sure !",
+    "correctanswer": "I'm fine. Thank !",
+    "createdAt": {
+      "$date": "2021-08-30T06:54:58.692Z"
+    },
+    "__v": 0
+  }
+]

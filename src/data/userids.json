@@ -1,0 +1,44 @@
+[
+  {
+    "_id": {
+      "$oid": "6143792f985da81320c63caf"
+    },
+    "role": "admin",
+    "isEmailVerified": false,
+    "username": "tuandoan",
+    "password": "$2a$08$/O55q1o1mlN6qDnTmTg6FOFWzirKhgYRIleLKlPbMp31VsNX.SGBW",
+    "createdAt": {
+      "$date": "2021-09-16T17:04:47.971Z"
+    },
+    "__v": 0,
+    "score": "0"
+  },
+  {
+    "_id": {
+      "$oid": "61437a27985da81320c63cb4"
+    },
+    "role": "user",
+    "isEmailVerified": false,
+    "username": "tuandoan2",
+    "password": "$2a$08$ewaAE.YqU6twEVVq.Mk85.uVP9guJbz/h3kZc0LIDbe8pobIE9kzm",
+    "createdAt": {
+      "$date": "2021-09-16T17:08:55.700Z"
+    },
+    "__v": 0,
+    "socre": "0"
+  },
+  {
+    "_id": {
+      "$oid": "61437b7d78ef50271444ba71"
+    },
+    "score": 0,
+    "role": "user",
+    "isEmailVerified": false,
+    "username": "tuandoan3",
+    "password": "$2a$08$..LWw4NPDISSeeHxTtooJeEcxxjzocWfuViDxL1O4SWY/GgoNdgiy",
+    "createdAt": {
+      "$date": "2021-09-16T17:14:37.631Z"
+    },
+    "__v": 0
+  }
+]

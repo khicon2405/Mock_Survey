@@ -1,0 +1,51 @@
+<div class="container__login">
+  <!-- <div class="overlay"></div> -->
+  <div class="form__login">
+    <h1 class="title__login">Đăng kí</h1>
+    <div class="mode" *ngIf="mode === 'error'">
+      Tài khoản hoặc mật khẩu không chính xác. Vui lòng nhập lại
+    </div>
+    <form
+      class="form"
+      novalidate
+      (ngSubmit)="onSubmit()"
+      [formGroup]="formLogin"
+    >
+      <div class="form__control">
+        <label class="form__control--label">Tài Khoản</label>
+        <input
+          formControlName="userName"
+          type="text"
+          class="form__control--input"
+          (keyup)="onChange()"
+        />
+      </div>
+      <div class="form__control">
+        <label class="form__control--label">Mật Khẩu</label>
+        <input
+          formControlName="passWord"
+          type="password"
+          class="form__control--input"
+          (keyup)="onChange()"
+        />
+      </div>
+      <div class="form__control">
+        <label class="form__control--label">Xác nhận Mật Khẩu</label>
+        <input
+          formControlName="re_passWord"
+          type="password"
+          class="form__control--input"
+          (keyup)="onChange()"
+        />
+      </div>
+      <div class="form__control register">
+        <button class="submit">Đăng kí</button>
+        <button class="submit back">
+          <a style="text-decoration: none" [routerLink]="['/login']"
+            >Đăng nhập</a
+          >
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
